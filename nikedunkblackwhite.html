@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Dunk Black and White | SNEAKER POSADAS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #000; color: white; margin: 0; font-family: sans-serif; }
+
+        /* NAVBAR IGUAL AL INDEX */
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 5%; border-bottom: 1px solid #222; background: #000;
+        }
+        .logo-wrapper { 
+            position: relative; width: 70px; height: 70px; 
+            display: flex; align-items: center; justify-content: center; cursor: pointer;
+        }
+        .logo-glow {
+            position: absolute; width: 100%; height: 100%;
+            border-radius: 50%; border: 2px solid #39FF14; box-shadow: 0 0 15px #39FF14;
+        }
+        .logo-img { width: 80%; z-index: 2; border-radius: 50%; }
+
+        /* LAYOUT DE PRODUCTO (ESTILO MYR) */
+        .product-page { display: flex; padding: 40px 5%; gap: 50px; max-width: 1200px; margin: auto; }
+
+        /* Columna Izquierda: Galería */
+        .gallery-container { display: flex; gap: 15px; flex: 1.5; }
+        .thumbnails { display: flex; flex-direction: column; gap: 10px; }
+        .thumbnails img { 
+            width: 80px; height: 80px; object-fit: cover; border: 1px solid #333; cursor: pointer; 
+        }
+        .thumbnails img:hover { border-color: #39FF14; }
+
+        .main-image { 
+            flex: 1; background: #111; border: 1px solid #222; 
+            display: flex; align-items: center; justify-content: center; 
+            height: 500px; overflow: hidden; position: relative;
+        }
+        .main-image img { 
+            max-width: 90%; transition: transform 0.5s ease; cursor: zoom-in; 
+        }
+        .main-image:hover img { transform: scale(1.3); } /* EFECTO ZOOM */
+
+        /* Columna Derecha: Info */
+        .details { flex: 1; }
+        .price { color: #39FF14; font-size: 38px; font-weight: bold; margin: 20px 0; }
+
+        .selector-group { margin-bottom: 25px; }
+        .size-options { display: flex; gap: 10px; margin-top: 10px; }
+        .size-btn { 
+            background: transparent; border: 1px solid #444; color: white; 
+            padding: 10px 15px; cursor: pointer; min-width: 45px;
+        }
+        .size-btn.active, .size-btn:hover { border-color: #39FF14; color: #39FF14; }
+
+        .qty-input {
+            background: #111; border: 1px solid #333; color: white;
+            padding: 10px; width: 60px; text-align: center; margin-top: 10px;
+        }
+
+        .buy-now { 
+            background: #39FF14; color: black; border: none; padding: 18px; 
+            width: 100%; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 20px;
+        }
+
+        /* Envío Correo Argentino */
+        .shipping-calc { 
+            margin-top: 30px; border-top: 1px solid #222; padding-top: 20px; 
+        }
+        .zip-row { display: flex; gap: 10px; margin-top: 10px; }
+        .zip-row input { 
+            flex: 1; padding: 12px; background: #111; border: 1px solid #333; color: white; 
+        }
+        .zip-btn { background: white; color: black; border: none; padding: 0 20px; font-weight: bold; cursor: pointer; }
+        
+        .shipping-info { 
+            margin-top: 15px; background: #0a0a0a; padding: 15px; border-radius: 5px; display: none;
+            border-left: 4px solid #39FF14; font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-wrapper" onclick="window.location.href='index.html'">
+            <div class="logo-glow"></div>
+            <img src="logosneakerposadas.png" class="logo-img">
+        </div>
+        <div class="nav-right">
+            <span>👤 Registrarse</span> | 🛒
+        </div>
+    </nav>
+
+    <div style="padding: 20px 5% 0 5%; font-size: 14px; color: #666;">
+        <a href="index.html" style="color: #666; text-decoration: none;">Inicio</a> > 
+        <a href="productos.html" style="color: #666; text-decoration: none;">Zapatillas</a> > 
+        <a href="productos.html" style="color: #666; text-decoration: none;">Nike</a> > 
+        <span style="color: #39FF14;">Dunk</span>
+    </div>
+
+    <main class="product-page">
+        <div class="gallery-container">
+            <div class="thumbnails">
+                <img src="nikedunk.blackwhite1.png" onclick="updateMain(this.src)">
+                <img src="nikedunkblackandwhite2.png" onclick="updateMain(this.src)">
+                <img src="ninkdunkblackwhite-suelas.png.webp" onclick="updateMain(this.src)">
+            </div>
+            <div class="main-image">
+                <img src="nikedunk.blackwhite1.png" id="main-view">
+            </div>
+        </div>
+
+        <div class="details">
+            <h1 style="margin:0; font-size: 32px;">Nike Dunk Black and White</h1>
+            <p style="color:#555;">Categoría: Nike Dunk</p>
+            <div class="price">$52.000</div>
+
+            <div class="selector-group">
+                <label>Talle:</label>
+                <div class="size-options">
+                    <button class="size-btn">37</button>
+                    <button class="size-btn">38</button>
+                     <button class="size-btn">39</button>
+                    <button class="size-btn active">40</button>
+                    <button class="size-btn active">41</button>
+                    <button class="size-btn">42</button>
+                    <button class="size-btn">43</button>
+                </div>
+            </div>
+
+            <div class="selector-group">
+                <label>Cantidad:</label><br>
+                <input type="number" value="1" min="1" class="qty-input">
+            </div>
+
+            <button class="buy-now" onclick="alert('¡Producto añadido!')">COMPRAR AHORA</button>
+
+            <div class="shipping-calc">
+                <p>🚚 Medios de envío</p>
+                <div class="zip-row">
+                    <input type="text" id="cp-input" placeholder="Tu código postal (ej: 3300)">
+                    <button class="zip-btn" onclick="showShipping()">CALCULAR</button>
+                </div>
+                <div id="shipping-result" class="shipping-info">
+                    <p>📦 <strong>Correo Argentino a domicilio:</strong> $3.300</p>
+                    <p>📦 <strong>Retiro en sucursal Correo:</strong> $2.100</p>
+                    <p style="color: #39FF14; font-size: 12px;">Llega entre 3 y 5 días hábiles.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function updateMain(src) { document.getElementById('main-view').src = src; }
+        function showShipping() { document.getElementById('shipping-result').style.display = 'block'; }
+
+        // Script para activar botones de talle
+        const btns = document.querySelectorAll('.size-btn');
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+/* --- VARIABLES Y BASES --- */
+:root {
+    --verde: #39FF14;
+    --negro: #000;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background: var(--negro); 
+    color: white; 
+    font-family: 'Arial', sans-serif; 
+    overflow-x: hidden; 
+}
+
+/* --- BARRA DE ENVÍO --- */
+.shipping-bar {
+    background: var(--verde);
+    color: #000;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* --- NAVBAR (ICONOS A LA DERECHA) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px; 
+    background: #000;
+    border-bottom: 1px solid #111;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.nav-main-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex: 1;
+}
+
+/* Logo LED */
+.logo-glow-wrapper {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.glow-ring {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: conic-gradient(from 0deg, transparent, var(--verde), transparent);
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+
+.logo-static {
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+    background: #000;
+    z-index: 2;
+    object-fit: contain;
+}
+
+/* Menú Navegación */
+.nav-menu { display: flex; list-style: none; gap: 20px; }
+.nav-menu a {
+    color: white !important;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.nav-menu a:hover { color: var(--verde) !important; }
+
+/* --- REPARACIÓN DE MENÚS DESPLEGABLES (ZAPATILLAS/REMERAS) --- */
+.nav-menu li.dropdown { position: relative; }
+.dropdown-brands {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #050505;
+    min-width: 180px;
+    list-style: none;
+    border: 1px solid #111;
+    border-top: 2px solid var(--verde);
+    padding: 10px 0;
+    z-index: 1100;
+}
+.nav-menu li.dropdown:hover .dropdown-brands { display: flex; flex-direction: column; }
+.dropdown-brands li a { padding: 12px 20px; color: #ccc !important; text-transform: uppercase; font-size: 13px; }
+.dropdown-brands li a:hover { background-color: #111; color: var(--verde) !important; }
+
+/* --- BUSCADOR --- */
+.search-container { margin-left: 20px; }
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #333;
+    padding: 6px 15px;
+    border-radius: 20px;
+    width: 250px;
+    background: #0a0a0a;
+}
+.search-box input {
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    width: 100%;
+}
+
+/* Iconos Derecha */
+.nav-right-icons { 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+}
+.icon-neon {
+    width: 28px;
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+
+/* --- REPARACIÓN MENÚ USUARIO (REGISTRAR/INICIAR) --- */
+.user-menu { position: relative; display: inline-block; }
+.icon-user { width: 35px; cursor: pointer; display: block; }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #050505;
+    min-width: 160px;
+    border: 1px solid var(--verde);
+    z-index: 1001;
+    border-radius: 4px;
+}
+.user-menu:hover .dropdown-content { display: block; }
+.dropdown-content a { color: white !important; padding: 12px 16px; display: block; font-size: 12px; }
+
+/* --- BLOQUEO DE COLOR VIOLETA --- */
+a, a:visited, h3, .brand-item p {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* --- SECCIÓN MARCAS --- */
+.brands-section { padding: 40px 0; text-align: center; }
+.titulo-seccion-verde { color: var(--verde) !important; font-size: 1.5rem; font-weight: 900; margin-bottom: 30px; text-transform: uppercase; }
+.brands-container { display: flex; justify-content: center; gap: 50px; align-items: center; }
+.brand-item { cursor: pointer; text-decoration: none; }
+.brand-img { height: 45px; filter: brightness(0); transition: 0.3s; }
+.brand-item:hover .brand-img { filter: none; }
+
+/* --- VIDEO --- */
+.hero-video { width: 100%; height: 75vh; background: #000; }
+.hero-video iframe { width: 100%; height: 100%; border: none; }
+
+/* --- PRODUCTOS Y PRECIOS --- */
+.offers-section { padding: 60px 0; text-align: center; }
+.oferta-verde { color: var(--verde) !important; font-weight: 900; font-size: 2.2rem; }
+.products-grid-compact { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+.card-mini { width: 280px; background: #050505; border: 1px solid #222; padding: 15px; position: relative; transition: 0.3s; }
+.card-mini:hover { border-color: var(--verde); }
+.p-new { color: var(--verde) !important; font-size: 24px; font-weight: bold; display: block; }
+.p-old { color: #888 !important; text-decoration: line-through !important; font-size: 16px; margin-right: 10px; }
+.p-perc { color: var(--verde) !important; font-weight: bold; font-size: 16px; }
+
+.card-img-box { position: relative; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+.img-front, .img-back { max-width: 90%; position: absolute; transition: 0.5s; }
+.img-back { opacity: 0; }
+.card-mini:hover .img-front { opacity: 0; }
+.card-mini:hover .img-back { opacity: 1; }
+
+/* --- EFECTO GUSANO --- */
+.border-gusano { position: fixed; inset: 0; pointer-events: none; z-index: 9999; overflow: hidden; }
+.border-gusano span { position: absolute; display: block; box-shadow: 0 0 10px var(--verde); }
+.border-gusano span:nth-child(1) { top: 0; left: -100%; width: 100%; height: 3px; background: linear-gradient(90deg, transparent, var(--verde)); animation: move1 2s linear infinite; }
+.border-gusano span:nth-child(2) { top: -100%; right: 0; width: 3px; height: 100%; background: linear-gradient(180deg, transparent, var(--verde)); animation: move2 2s linear infinite; animation-delay: 0.5s; }
+.border-gusano span:nth-child(3) { bottom: 0; right: -100%; width: 100%; height: 3px; background: linear-gradient(270deg, transparent, var(--verde)); animation: move3 2s linear infinite; animation-delay: 1s; }
+.border-gusano span:nth-child(4) { bottom: -100%; left: 0; width: 3px; height: 100%; background: linear-gradient(360deg, transparent, var(--verde)); animation: move4 2s linear infinite; animation-delay: 1.5s; }
+@keyframes move1 { 0% { left: -100%; } 50%, 100% { left: 100%; } }
+@keyframes move2 { 0% { top: -100%; } 50%, 100% { top: 100%; } }
+@keyframes move3 { 0% { right: -100%; } 50%, 100% { right: 100%; } }
+@keyframes move4 { 0% { bottom: -100%; } 50%, 100% { bottom: 100%; } }
+
+.whatsapp-btn { position: fixed; bottom: 20px; right: 20px; width: 50px; z-index: 1000; }
+/* Contenedor de la marca que tiene modelos */
+.has-submenu {
+    position: relative;
+}
+
+/* El menú de modelos (Vapor Max, Campus, etc.) */
+.submenu-models {
+    display: none; /* Empieza oculto */
+    position: absolute;
+    top: 0;
+    left: 100%; /* Aparece justo a la derecha de la marca */
+    background-color: #050505;
+    min-width: 180px;
+    list-style: none;
+    border: 1px solid #111;
+    border-left: 2px solid var(--verde); /* Detalle en verde para separar */
+    padding: 10px 0;
+    z-index: 1200;
+}
+
+/* Mostrar cuando el mouse está arriba de la marca */
+.has-submenu:hover > .submenu-models {
+    display: block;
+}
+
+/* Flechita al costado del nombre de la marca */
+.arrow {
+    float: right;
+    font-size: 18px;
+    line-height: 1;
+    margin-left: 10px;
+    color: var(--verde);
+}
+
+/* Estilo de los links de modelos */
+.submenu-models li a {
+    padding: 10px 20px !important;
+    font-size: 12px !important;
+    white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+}
+
+.submenu-models li a:hover {
+    background-color: #111;
+    color: var(--verde) !important;
+}
+/* --- LIMPIEZA FINAL DE CUADRADO NEGRO --- */
+.dropdown-brands li a:hover, 
+.submenu-models li a:hover,
+.dropdown-content a:hover {
+    background-color: transparent !important; 
+    color: var(--verde) !important;
+}
+.category-container {
+    display: flex;
+    padding: 40px;
+    gap: 30px;
+    background: #000;
+}
+
+.sidebar-filters {
+    width: 250px;
+    border-right: 1px solid #222;
+    padding-right: 20px;
+}
+
+.filter-group h3 {
+    color: var(--verde);
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.tallas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.talla-btn {
+    background: transparent;
+    border: 1px solid #333;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.talla-btn:hover {
+    border-color: var(--verde);
+    color: var(--verde);
+}
+
+.breadcrumbs {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 20px;
+}
+.category-layout-main {
+    display: flex;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.sidebar-filters {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.filter-group {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 20px;
+}
+
+.filter-group h3 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.cat-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cat-list li a {
+    color: #888;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+.cat-list li a:hover, .cat-list li a.active {
+    color: var(--verde);
+}
+
+.circle {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 8px;
+    border: 1px solid #444;
+}
+.black { background: black; }
+.white { background: white; }
+.grey { background: grey; }
+/* Estilo para las imágenes de las zapatillas */
+.contenedor-imagen {
+    width: 100%;
+    height: 320px; /* Altura generosa para que no se vea apretado */
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.contenedor-imagen img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Esto evita que la zapatilla se estire o se corte */
+}
+
+/* Grilla de solo dos productos */
+.grilla-nike {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Etiquetas de oferta */
+.etiqueta-oferta {
+    background: #00ff00;
+    color: black;
+    padding: 5px 12px;
+    font-weight: bold;
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 5;
+}
+
+/* --- AJUSTES MÓVILES (NUEVO) --- */
+@media (max-width: 768px) {
+    /* Navbar móvil */
+    .navbar {
+        padding: 10px 15px;
+    }
+    .nav-main-content {
+        gap: 15px;
+    }
+    .logo-glow-wrapper {
+        width: 50px;
+        height: 50px;
+    }
+    .nav-menu, .search-container {
+        display: none; /* Oculta menú y buscador para que no se amontone */
+    }
+    
+    /* Layout de Catálogo */
+    .category-layout-main {
+        flex-direction: column;
+        margin: 20px auto;
+    }
+    .sidebar-filters {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #222;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    .grilla-nike {
+        grid-template-columns: 1fr; /* Una zapatilla por fila */
+        gap: 20px;
+    }
+    
+    /* Grid de marcas y productos en Home */
+    .brands-container {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .brand-img {
+        height: 30px;
+    }
+    .hero-video {
+        height: 40vh;
+    }
+    .card-mini {
+        width: 100%; /* Tarjetas de oferta ocupan todo el ancho */
+    }
+}

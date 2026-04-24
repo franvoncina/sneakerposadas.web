@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNEAKER POSADAS | Nike</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos base para mantener la estética de Sneaker Posadas */
+        body { background-color: #000; color: white; margin: 0; font-family: sans-serif; }
+
+        /* NAVBAR - LOGO CIRCULAR LED MEJORADO */
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 5%; border-bottom: 1px solid #222; background: #000;
+        }
+        .logo-wrapper { 
+            position: relative; 
+            width: 70px; /* Un poco más grande para el LED */
+            height: 70px; 
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-glow {
+            position: absolute; 
+            width: 100%; 
+            height: 100%;
+            border-radius: 50%; 
+            border: 2px solid #39FF14; 
+            box-shadow: 0 0 15px #39FF14, inset 0 0 10px #39FF14; /* Más efecto neón */
+        }
+        .logo-img { 
+            width: 80%; /* Imagen más pequeña adentro para que se vea el LED circular */
+            border-radius: 50%; 
+            position: relative; 
+            z-index: 2; 
+        }
+
+        .search-bar { background: #111; padding: 8px 15px; border-radius: 20px; width: 30%; display: flex; }
+        .search-bar input { background: transparent; border: none; color: white; width: 100%; outline: none; }
+
+        .nav-right { display: flex; gap: 20px; align-items: center; }
+        .user-btn { color: white; text-decoration: none; font-size: 14px; }
+        .cart-btn { color: #39FF14; text-decoration: none; position: relative; }
+
+        /* MAIN LAYOUT CON SIDEBAR IZQUIERDA */
+        .main-container { display: flex; padding: 40px 5%; gap: 40px; }
+        
+        /* SIDEBAR ESTILO REFERENCIA */
+        .sidebar { width: 220px; flex-shrink: 0; }
+        .sidebar-section { margin-bottom: 30px; }
+        .sidebar-section h3 { 
+            font-size: 16px; 
+            color: #fff; 
+            text-transform: uppercase;
+            border-bottom: 1px solid #333; 
+            padding-bottom: 10px; 
+            margin-bottom: 15px; 
+        }
+        .sidebar-list { list-style: none; padding: 0; margin: 0; }
+        .sidebar-list li { 
+            margin-bottom: 12px; 
+            font-size: 14px; 
+            color: #888; 
+            cursor: pointer; 
+            transition: 0.3s; 
+        }
+        .sidebar-list li:hover, .sidebar-list li.active { color: #39FF14; }
+
+        /* GRILLA DE PRODUCTOS */
+        .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; flex-grow: 1; }
+
+        /* TARJETA DE PRODUCTO */
+        .product-card {
+            background: #0f0f0f; border-radius: 12px; overflow: hidden;
+            text-decoration: none; color: white; transition: 0.3s;
+            display: block;
+        }
+        
+        .img-container {
+            position: relative;
+            width: 100%;
+            height: 320px; /* Ajuste leve para simetría */
+            background: #151515;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            position: absolute;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Efecto Hover */
+        .img-hover { opacity: 0; }
+        .product-card:hover .img-main { opacity: 0; }
+        .product-card:hover .img-hover { opacity: 1; }
+
+        .product-info { padding: 20px; }
+        .product-info h3 { font-size: 18px; margin: 0 0 10px 0; font-weight: normal; }
+        .price { color: #39FF14; font-size: 24px; font-weight: bold; }
+        
+        .tag-promo {
+            position: absolute; top: 15px; left: 15px;
+            background: #39FF14; color: black; font-weight: bold;
+            font-size: 11px; padding: 5px 10px; z-index: 5;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-wrapper" onclick="window.location.href='index.html'">
+            <div class="logo-glow"></div>
+            <img src="logosneakerposadas.png" class="logo-img">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar zapatillas...">
+            <span>🔍</span>
+        </div>
+        <div class="nav-right">
+            <a href="#" class="user-btn">👤 Registrarse</a>
+            <a href="#" class="cart-btn" style="font-size: 20px;">🛒 <span style="background:#39FF14; color:#000; border-radius:50%; padding:2px 6px; font-size:12px; position:absolute; top:-10px; right:-10px;">0</span></a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>CATEGORÍAS</h3>
+                <ul class="sidebar-list">
+                    <li>Vapor Max</li>
+                    <li>Air Force</li>
+                    <li>Air Max Tn</li>
+                    <li class="active" style="color: #39FF14; font-weight: bold;">Dunk</li>
+                    <li>Jordan 4</li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3>COLOR</h3>
+                <ul class="sidebar-list">
+                    <li><input type="checkbox"> Negro y Blanco</li>
+                    <li><input type="checkbox"> Gris</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="products-grid">
+            
+            <a href="nikedunkblackwhite.html" class="product-card">
+                <div class="img-container">
+                    <img src="nikedunk.blackwhite1.png" class="img-main">
+                    <img src="nikedunkblackandwhite2.png" class="img-hover">
+                </div>
+                <div class="product-info">
+                    <h3>Nike Dunk Black and White</h3>
+                    <div class="price">$52.000</div>
+                </div>
+            </a>
+
+            <a href="producto.html" class="product-card">
+                <div class="tag-promo">OFERTA + COMBO 🎁</div>
+                <div class="img-container">
+                    <img src="nikedunklow.png" class="img-main">
+                    <img src="nikedunklow-suelas.png" class="img-hover">
+                </div>
+                <div class="product-info">
+                    <h3>Nike SB Dunk Low + Medias</h3>
+                    <div class="price">$48.700</div>
+                </div>
+            </a>
+
+        </main>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike SB Dunk Low | SNEAKER POSADAS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* --- ESTILOS ESPECÍFICOS INTEGRADOS --- */
+        body { background-color: #000; color: white; margin: 0; font-family: sans-serif; }
+
+        /* NAVBAR ESTILO INDEX */
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 5%; border-bottom: 1px solid #222; background: #000;
+        }
+        .logo-glow-wrapper {
+            position: relative; width: 70px; height: 70px;
+            display: flex; align-items: center; justify-content: center; cursor: pointer;
+        }
+        .glow-ring {
+            position: absolute; width: 100%; height: 100%;
+            border-radius: 50%; border: 2px solid #39FF14; box-shadow: 0 0 15px #39FF14;
+        }
+        .logo-static { width: 75%; z-index: 2; border-radius: 50%; }
+
+        .nav-icons { display: flex; gap: 20px; align-items: center; }
+        .user-link { color: #39FF14; text-decoration: none; display: flex; align-items: center; gap: 8px; font-size: 14px; }
+
+        /* Layout Principal del Producto - CORRECCIÓN ALINEACIÓN */
+        .product-page-section { padding: 40px 5%; max-width: 1300px; margin: 0 auto; }
+        .product-layout { display: flex; gap: 50px; flex-wrap: wrap; align-items: flex-start; }
+
+        /* Galería de Imágenes */
+        .gallery-container { display: flex; gap: 15px; flex: 1.5; min-width: 300px; align-items: flex-start; }
+        .thumbnails { display: flex; flex-direction: column; gap: 10px; }
+        .thumbnails img {
+            width: 80px; height: 80px; object-fit: cover;
+            border: 2px solid #333; cursor: pointer; transition: 0.3s;
+        }
+        .thumbnails img.active-thumb { border-color: #39FF14; }
+
+        .main-view {
+            flex: 1; border: 2px solid #222; background: #111;
+            display: flex; align-items: center; justify-content: center;
+            height: 500px; overflow: hidden; position: relative;
+        }
+        .main-view img { 
+            max-width: 90%; max-height: 90%; object-fit: contain; 
+            transition: transform 0.5s ease; cursor: zoom-in;
+        }
+        .main-view:hover img { transform: scale(1.2); }
+
+        /* Información y Compra */
+        .info-container { flex: 1; min-width: 300px; }
+        .category-tag { color: #39FF14; font-size: 14px; font-weight: bold; }
+        .product-title { font-size: 32px; margin: 10px 0; font-weight: 800; }
+        .price-new { color: #39FF14; font-size: 40px; font-weight: 800; }
+        .price-old { text-decoration: line-through; color: #555; font-size: 18px; }
+        .discount-tag { background: #39FF14; color: black; padding: 2px 8px; font-weight: bold; border-radius: 4px; }
+
+        .size-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+        .talle-btn {
+            background: transparent; border: 1px solid #333; color: white;
+            padding: 12px 20px; cursor: pointer; transition: 0.3s;
+        }
+        .talle-btn.active { border-color: #39FF14; color: #39FF14; }
+
+        .btn-add-cart {
+            background: #39FF14; color: black; border: none; padding: 15px 40px;
+            font-weight: bold; font-size: 16px; width: 100%; cursor: pointer; margin-top: 20px;
+        }
+
+        .shipping-calc { margin-top: 30px; background: #111; padding: 20px; border-radius: 4px; }
+
+        /* --- SECCIÓN PRODUCTOS SIMILARES --- */
+        .similar-section { padding: 50px 5%; border-top: 1px solid #222; margin-top: 50px; }
+        .similar-title { color: #39FF14; text-transform: uppercase; margin-bottom: 30px; font-size: 20px; }
+        .similar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
+        .similar-card { 
+            background: #0a0a0a; border-radius: 10px; padding: 15px; 
+            text-decoration: none; color: white; border: 1px solid #111; transition: 0.3s;
+            text-align: center;
+        }
+        .similar-card:hover { border-color: #39FF14; transform: translateY(-5px); }
+        .similar-card img { width: 100%; height: 180px; object-fit: contain; margin-bottom: 15px; }
+        .similar-card h3 { font-size: 16px; margin: 10px 0; font-weight: normal; }
+        .similar-price { color: #39FF14; font-weight: bold; font-size: 18px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo-glow-wrapper" onclick="window.location.href='index.html'">
+            <div class="glow-ring"></div>
+            <img src="logosneakerposadas.png" class="logo-static" alt="Logo">
+        </div>
+
+        <div class="nav-icons">
+            <a href="#" class="user-link">👤 Registrarse</a>
+            <div style="position: relative; cursor: pointer; font-size: 20px;">
+                🛒 <span style="background: #39FF14; color: black; border-radius: 50%; padding: 2px 6px; font-size: 12px; position: absolute; top: -10px; right: -10px;">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <div style="padding: 20px 5% 0 5%; font-size: 14px; color: #666;">
+        <a href="index.html" style="color: #666; text-decoration: none;">Inicio</a> > 
+        <a href="productos.html" style="color: #666; text-decoration: none;">Zapatillas</a> > 
+        <span style="color: #39FF14;">Nike SB Dunk Low Combo</span>
+    </div>
+
+    <section class="product-page-section">
+        <div class="product-layout">
+            
+            <div class="gallery-container">
+                <div class="thumbnails">
+                    <img src="nikedunklow.png" alt="Vista 1" class="active-thumb" onclick="changeImage(this.src, this)">
+                    <img src="nikedunklow-suelas.png" alt="Vista 2" onclick="changeImage(this.src, this)">
+                </div>
+                <div class="main-view">
+                    <img src="nikedunklow.png" id="main-product-img" alt="Nike SB Dunk Low">
+                </div>
+            </div>
+
+            <div class="info-container">
+                <span class="category-tag">OFERTA + COMBO 🎁</span>
+                <h1 class="product-title">Nike SB Dunk Low Grises + Medias Supreme de regalo</h1>
+                
+                <div class="price-block">
+                    <span class="price-new">$48.700</span>
+                    <div style="display:flex; align-items:center; gap:10px; margin-top:5px;">
+                        <span class="price-old">$60.000</span>
+                        <span class="discount-tag">18% OFF</span>
+                    </div>
+                </div>
+
+                <div style="margin: 20px 0; color: #ccc; font-size: 14px; line-height: 1.6;">
+                    Disfrutá de las Dunk Low SB con este super combo. Zapatillas premium diseñadas para el uso diario. <strong>Incluye un par de medias Supreme de regalo.</strong>
+                </div>
+
+                <div class="size-box">
+                    <p>Seleccionar Talle:</p>
+                    <div class="size-grid">
+                        <button class="talle-btn">38</button>
+                        <button class="talle-btn active">39</button>
+                        <button class="talle-btn">40</button>
+                        <button class="talle-btn">41</button>
+                        <button class="talle-btn">42</button>
+                    </div>
+                </div>
+
+                <button class="btn-add-cart" onclick="addToCart()">COMPRAR AHORA</button>
+
+                <div class="shipping-calc">
+                    <p style="margin-top: 0;">🚚 Calcular Envío (Correo Argentino)</p>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="CP 3300" style="padding: 10px; flex: 1; background: #222; border: 1px solid #333; color: white;">
+                        <button style="padding: 10px 20px; background: white; border: none; font-weight: bold; cursor: pointer;">CALCULAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="similar-section">
+        <h2 class="similar-title">Productos Similares</h2>
+        <div class="similar-grid">
+            
+            <a href="nikedunkblackwhite.html" class="similar-card">
+                <img src="nikedunk.blackwhite1.png" alt="Nike BW">
+                <h3>Nike Dunk Black and White</h3>
+                <span class="similar-price">$52.000</span>
+            </a>
+
+            <a href="producto.html" class="similar-card">
+                <img src="nikedunklow.png" alt="Nike Grey">
+                <h3>Nike SB Dunk Low Grey</h3>
+                <span class="similar-price">$48.700</span>
+            </a>
+
+        </div>
+    </section>
+
+    <script>
+        function changeImage(src, thumbElement) {
+            document.getElementById('main-product-img').src = src;
+            const thumbs = document.querySelectorAll('.thumbnails img');
+            thumbs.forEach(thumb => thumb.classList.remove('active-thumb'));
+            thumbElement.classList.add('active-thumb');
+        }
+
+        const talleBtns = document.querySelectorAll('.talle-btn');
+        talleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                talleBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        function addToCart() {
+            alert("Producto agregado al carrito.");
+        }
+    </script>
+</body>
+</html>
